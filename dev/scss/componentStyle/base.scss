@@ -1,0 +1,95 @@
+.base {
+  padding: 30px;
+  min-height: 100vh;
+  &-navbar {
+    display: flex;
+    justify-content: space-between;
+    &-search {
+      display: flex;
+      align-items: center;
+      position: relative;
+      img {
+        position: absolute;
+        left: 20px;
+      }
+      input {
+        border-radius: 30px !important;
+        padding: 10px 12px 10px 48px !important;
+        width: 325px !important;
+      }
+    }
+    &-btn {
+      button {
+        border-radius: 40px;
+        padding: 10px 14px;
+      }
+    }
+    > div {
+      align-items: center;
+    }
+  }
+  &-sidebar {
+    &-logo {
+      img {
+        width: 130px;
+      }
+      margin-bottom: 72px;
+    }
+    &-linkList {
+      .tab {
+        margin: 0 16px 45px 5px;
+        &-title {
+          svg {
+            margin-right: 16px;
+          }
+          span {
+            flex: 1;
+          }
+        }
+        &:hover {
+          cursor: pointer;
+        }
+        &.active,
+        &:hover {
+          a.tab-title {
+            color: #605bff !important;
+          }
+          span {
+            transition: all 0.2s ease;
+            color: #605bff;
+            font-weight: 500;
+          }
+          svg {
+            transition: all 0.2s ease;
+            color: #605bff;
+          }
+        }
+        &-links {
+          display: none;
+        }
+        &-link {
+          margin-left: 34px;
+          &:hover,
+          &.active {
+            a {
+              color: #605bff;
+              font-weight: 500;
+            }
+          }
+          &:not(:last-child) {
+            margin-bottom: 30px;
+          }
+          &:first-child {
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .base-sidebar {
+    display: none;
+  }
+}

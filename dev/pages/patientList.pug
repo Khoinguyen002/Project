@@ -1,0 +1,9 @@
+extends ../components/frames.pug
+block script 
+    script(src="scripts/patient/patientList.js" type="module") 
+block content 
+    .patientList
+        .patientList-title.main-title Patient List
+        .patientList-content
+            table#patientTable(style='width:100%')
+

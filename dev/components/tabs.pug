@@ -1,0 +1,4 @@
+mixin tabs(tabList, tabClass, flex, styles) 
+    div(class=`${tabClass}s d-flex`)
+        each val, index in tabList
+            div(class=`${tabClass} text-strong ${index == 0 ? "active" : ''} tab-styled` style={flex: `${flex ? flex[index]: "unset"}`, padding: styles.padding, margin: styles.margin} data-id=`${tabClass+index}`) #{val}

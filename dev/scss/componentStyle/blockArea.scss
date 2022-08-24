@@ -1,0 +1,252 @@
+@import "./dashboard.scss";
+@import "./patient.scss";
+
+@mixin bg-block($bg-color, $borderRadius, $padding, $marginBottom) {
+  background: $bg-color;
+  border-radius: $borderRadius;
+  border: 0.5px solid #e0e7fe;
+  padding: $padding;
+  margin-bottom: $marginBottom;
+}
+
+@mixin mpb-item-block($mpb) {
+  padding-bottom: $mpb;
+  margin-bottom: $mpb;
+  border-bottom: 1px #f3f3f8 solid;
+}
+
+.block-area {
+  @include bg-block(var(--bg-block1), 30px, 30px, 0);
+}
+
+.block {
+  @include bg-block(var(--bg-block2), 30px, 25px, 26px);
+}
+
+.block-end {
+  @include bg-block(var(--bg-block2), 30px, 25px, 0);
+}
+
+.block-td {
+  border-top: 0.5px solid #e0e7fe;
+  border-bottom: 0.5px solid #e0e7fe;
+  background: var(--bg-block2);
+  padding: 20px 0;
+  &:first-child {
+    border-left: 0.5px solid #e0e7fe;
+    border-radius: 10px 0 0 10px;
+    padding-left: 20px;
+  }
+  &:last-child {
+    border-right: 0.5px solid #e0e7fe;
+    border-radius: 0 10px 10px 0;
+  }
+}
+
+.block-td-head {
+  padding: 10px 0;
+  &:first-child {
+    padding-left: 20px;
+    padding-right: 10px !important;
+  }
+}
+
+.mr-block {
+  margin-right: 30px;
+}
+
+.mr-xl-block {
+  margin-right: 30px;
+}
+
+.mpb-item-block1 {
+  @include mpb-item-block(30px);
+}
+
+.mpb-item-block2 {
+  @include mpb-item-block(20px);
+}
+
+#patientTable_filter {
+  label {
+    text-align: end !important;
+  }
+}
+
+#patientTable {
+  border-spacing: 0 7px;
+  thead th:first-child {
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
+  td img {
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+table tr {
+  cursor: pointer;
+}
+
+.tab-styled {
+  flex: 2;
+  cursor: pointer;
+  border-bottom: 3px rgb(243, 243, 243) solid;
+  &.active {
+    border-bottom: 3px var(--bg-red-btn) solid !important;
+  }
+}
+
+.pagination {
+  .paginate_button {
+    &:first-child,
+    &:last-child {
+      a {
+        background-color: unset;
+        &:focus {
+          background-color: unset;
+        }
+      }
+    }
+    &.next {
+      a {
+        &::after {
+          content: url(../../assets/imgs/next.svg);
+          margin-left: 7px;
+          top: 20%;
+          right: -5%;
+          position: absolute;
+        }
+      }
+    }
+    &.previous {
+      a {
+        &::before {
+          content: url(../../assets/imgs/back.svg);
+          margin-right: 7px;
+          top: 20%;
+          left: -5%;
+          position: absolute;
+        }
+      }
+    }
+    &.disabled {
+      a {
+        color: #ffa88b;
+      }
+    }
+    &.active {
+      a {
+        background-color: var(--bg-red-btn);
+        border-radius: 5px;
+        padding: 6px 14px;
+      }
+    }
+    a {
+      border: none;
+      color: var(--bg-red-btn);
+      &:focus {
+        box-shadow: none;
+      }
+      &:hover {
+        background-color: unset;
+        color: var(--bg-red-btn);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .mr-xl-block {
+    margin-right: 0;
+  }
+  .block-end {
+    @include bg-block(var(--bg-block2), 20px, 25px, 20px);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .bloodReport-content {
+    border-radius: 20px;
+  }
+  .block-area {
+    @include bg-block(var(--bg-block1), 20px, 25px, 0);
+  }
+  .block {
+    @include bg-block(var(--bg-block2), 20px, 25px, 20px);
+  }
+  .block-td {
+    padding: 18px 0;
+    &:first-child {
+      padding-left: 18px;
+    }
+  }
+  #patientTable {
+    border-spacing: 0 5px;
+  }
+  .block-td-head {
+    &:first-child {
+      padding-left: 18px;
+    }
+  }
+  .mr-block {
+    margin-right: 25px;
+  }
+  .mpb-item-block1 {
+    @include mpb-item-block(27px);
+  }
+  .mpb-item-block2 {
+    @include mpb-item-block(18px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .topDiseases canvas {
+    max-width: 260px;
+    max-height: 260px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .bloodReport-content {
+    border-radius: 18px;
+  }
+  .block-area {
+    @include bg-block(var(--bg-block1), 18px, 16px, 0);
+  }
+  .block {
+    @include bg-block(var(--bg-block2), 18px, 25px, 21px);
+  }
+  .block-end {
+    @include bg-block(var(--bg-block2), 18px, 25px, 21px);
+  }
+  .block-td {
+    padding: 15px 0;
+    &:first-child {
+      padding-left: 15px;
+    }
+  }
+  .block-td-head {
+    &:first-child {
+      padding-left: 15px;
+    }
+  }
+  .mr-block {
+    margin-right: 12px;
+  }
+  .mpb-item-block1 {
+    @include mpb-item-block(18px);
+  }
+  .mpb-item-block2 {
+    @include mpb-item-block(15px);
+  }
+  canvas:not(.topDiseases canvas) {
+    min-height: 240px;
+  }
+}

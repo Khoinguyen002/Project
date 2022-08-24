@@ -1,0 +1,56 @@
+extends ../components/frames.pug
+include ../components/tabs.pug
+block script
+    script(src="scripts/patient/patientProfile.js" type="module")
+block content 
+    .patientProfile
+        .row.g-0
+            .col-xl-7
+                .patientProfile-title.title Patient Profile
+                .patientProfile-content.block-end.mr-xl-block
+                    .head.d-flex
+                        .head-avatar 
+                            img.avatar-120(src="assets/imgs/avar.png" alt="avatar")
+                        .head-info
+                            .name.main-title Eddy Cusuma
+                            .id.text #A-12201313
+                            .disease.text Cold & Flu
+                    .body
+                        +tabs(["Patient Infomation", "Visits", "Lab", "Prescriptions"], "patientProfileTab", [3,2], {padding: "20px 0 10px 0", margin: "0 0 20px 0"})
+                        .body-content 
+                            .patientInfomation.row.g-0
+            .col-xl-5
+                .heartRate 
+                    .heartRate-title.title Heart Rate
+                    .heartRate-content.block 
+                        canvas(id="heartRateChart" width="480" height="180")
+                .bloodPressure 
+                    .bloodPressure-title.title Blood Pressure
+                    .bloodPressure-content.d-flex
+                        .chart.block
+                            canvas(id="bloodPressureChart1" width="200" height="100")
+                            div.text Systolic
+                            div.text.d-flex
+                                div 150&nbsp
+                                div mmhz
+                        .chart.block
+                            canvas(id="bloodPressureChart2" width="200" height="100")
+                            div.text Diastolic
+                            div.text.d-flex
+                                div 75&nbsp
+                                div mmhz
+                .bloodReport
+                    .bloodReport-title.title Blood Report
+                    .bloodReport-content
+                        .bloodReport-content-item
+                            .state.text Down Cluster
+                            .value.text 90.9%
+                        .bloodReport-content-item
+                            .state.text Down Fiber
+                            .value.text 1.9%
+                        .bloodReport-content-item
+                            .state.text Waterfowl Feathers
+                            .value.text 1.7%
+                        .bloodReport-content-item
+                            .state.text Quill
+                            .value.text 0.0%

@@ -1,0 +1,42 @@
+include ../components/input.pug
+include ../components/checkbox.pug
+include ../components/button.pug
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="css/main.css")
+        title Document
+    body 
+        div(class="d-flex form" id="login")
+            .form-wrapper
+                .form-title Welcome to Medico
+                form
+                    +input("Email Address", "email", "johndoe.admin@gmail.com", "email")
+                    +input("Password", "password", "*******", "password")
+                    +checkbox("Remember me")
+                    +button("reset", "btn-style1-fw", "mb-20", "Sign in") Sign in
+                .form-question.text-input Don't have account? 
+                    span.form-question-link.text-input Create new
+            .banner-wrapper
+                img(src="assets/imgs/Group_639.png" alt="")
+
+        div(class="d-flex form" id="signup")
+            .form-wrapper
+                .form-title Register to Medico
+                form
+                    +input("Full Name", "text", "Jonh", "email")
+                    +input("Email Address", "email", "johndoe.admin@gmail.com", "email")
+                    +input("User Name", "email", "Jonh123", "email")
+                    +input("Password", "password", "*******", "password")
+                    +checkbox("I agree to the terms and conditions" ,"Privacy Policy.")
+                    +button("reset", "btn-style1-fw", "mb-20", "Sign in") Sign up
+                .form-question.text-input Already have an account? 
+                    span.form-question-link.text-input Log in
+            .banner-wrapper
+                img(src="assets/imgs/Group_615.png" alt="img")
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+        script(src="scripts/toggleAuthen/toggleAuthen.js") 
+

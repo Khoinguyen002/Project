@@ -1,0 +1,37 @@
+extends  ../components/frames.pug
+include  ../components/tabs.pug
+include  ../components/form.pug
+block script
+    script(src="scripts/emergency/emergencyForm.js" type="module") 
+block content
+    .emergencyForm 
+        .emergencyForm-title.main-title Emergency Form
+        .emergencyForm-content 
+            +tabs(["Personal Infomation", "Service Information", "Payment", ""], "emergencyForm-tab", "", {padding: "15px 50px 10px 0", margin: "0 0 30px 0"})
+            .tab-content
+                .emergencyForm-personalInfo(data-id="emergencyForm-tab0")
+                    +form("emergencyForm", emergencyForm)
+                .emergencyForm-serviceInfo.row(data-id="emergencyForm-tab1")
+                    .emergencyForm-serviceInfo.title Select your desire service
+                    .serviceList.col-xl-7
+                        .serviceList-content
+                            .serviceList-head.d-flex
+                                .text-strong Service Name
+                                .text-strong Price
+                            .serviceList-body
+                                each val, index in serviceList
+                                    .serviceList-item.d-flex(data-id=index)
+                                        .text #{val.name}
+                                        .text #{val.price}
+                    .serviceTotal.col-xl-5
+                        .serviceTotal-title.text-strong Given Services List
+                        .serviceTotal-content 
+                            .serviceTotal-head.d-flex
+                                .text SL 
+                                .text Service Name
+                                .text Price
+                            .serviceTotal-body 
+                                .serviceTotal-total.d-flex
+                                    .text 
+                                    .text Total
+                                    .text $0

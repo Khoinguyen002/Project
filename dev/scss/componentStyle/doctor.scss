@@ -1,0 +1,163 @@
+.doctor {
+  height: 330px;
+  .row {
+    height: 100%;
+  }
+  &-img {
+    height: 100%;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+      object-position: top;
+    }
+  }
+  &-info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    &-name.title {
+      margin-bottom: 0;
+      font-size: 18px;
+    }
+    &-description {
+      margin-top: 18px;
+      margin-bottom: 20px;
+    }
+    &-rate {
+      margin-bottom: 10px;
+    }
+    &-button {
+      flex: 1;
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+}
+
+.doctorProfile-profile {
+  position: relative;
+  .doctorProfile-profile-content {
+    .background {
+      margin: -25px;
+      img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 30px 30px 0 0;
+      }
+    }
+  }
+  .wrapper {
+    position: absolute;
+    display: flex;
+    top: 170px;
+    left: 35px;
+    width: 85%;
+    align-items: flex-end;
+    .avatar {
+      margin-right: 36px;
+      border: 3px var(--bg-red-btn) solid;
+      border-radius: 50%;
+    }
+    .info {
+      justify-content: space-between;
+      flex: 1;
+      align-items: flex-end;
+    }
+  }
+  &-tabs {
+    margin-top: 130px;
+  }
+  .biography {
+    height: 270px;
+    overflow-y: hidden;
+    position: relative;
+    &-fade {
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        #ffffff 100%
+      );
+      position: absolute;
+      height: 270px;
+      width: 92%;
+      bottom: 15px;
+      align-items: flex-end;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
+}
+
+.calendar-container {
+  min-height: 400px;
+  .week .day.header {
+    font-size: 16px;
+    text-transform: capitalize;
+  }
+}
+
+.appoitment {
+  margin-top: 20px;
+  .wrapper:not(:first-child) {
+    margin-top: 20px;
+  }
+  &-label {
+    padding-bottom: 5px;
+    border-bottom: 1px #ededf2 solid;
+    margin-bottom: 10px;
+  }
+}
+
+.doctorProfile-slide {
+  cursor: pointer;
+  .doctorProfile-slide-item {
+    margin: 0 15px;
+    .item-img {
+      margin-right: 20px;
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 10px;
+      }
+    }
+    .item-info {
+      font-size: 15px !important;
+    }
+  }
+  .slick-prev {
+    border: 1px #e0e7fe solid !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-block2) !important;
+    left: -15px;
+    &:before {
+      content: url("../../assets/imgs/prevCalendar.svg") !important;
+      left: 14px;
+      bottom: 10px;
+      position: absolute;
+    }
+  }
+  .slick-next {
+    border: 1px #e0e7fe solid !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-block2) !important;
+    right: -15px;
+    &:before {
+      content: url("../../assets/imgs/nextCalendar.svg") !important;
+      left: 16px;
+      bottom: 10px;
+      position: absolute;
+    }
+  }
+  .slick-list {
+    margin: 0 25px;
+  }
+}

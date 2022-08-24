@@ -1,0 +1,8 @@
+mixin input(label, type, placeholder, name, dataList)
+    .form-group 
+        label.text-strong #{label}
+        input(type=`${type == "list" ? "text" : type}`  class="input-style text-input mb-20" placeholder=placeholder name=name list=name)
+        if type == "list"
+            datalist(id=name)
+                each val in dataList 
+                    option(value=val)

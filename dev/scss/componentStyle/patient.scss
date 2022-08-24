@@ -1,0 +1,119 @@
+.patientProfile-content {
+  .head {
+    align-items: center;
+    .head-avatar {
+      margin-right: 30px;
+    }
+  }
+  .body {
+    .content {
+      overflow-y: scroll;
+      .patientInfomation {
+        > div > div {
+          margin-bottom: 5px;
+        }
+      }
+      /* width */
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: rgb(163, 164, 255);
+        border-radius: 5px;
+      }
+
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: var(--bg-blue-btn);
+      }
+    }
+  }
+}
+
+.bloodPressure-content {
+  justify-content: space-between;
+  .chart {
+    width: 48%;
+    > div {
+      div:first-child {
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+    .text.d-flex {
+      align-items: center;
+    }
+    &:first-child {
+      > div {
+        div:first-child {
+          color: #ff8f6b;
+        }
+      }
+    }
+    &:last-child {
+      > div {
+        div:first-child {
+          color: #5dd971;
+        }
+      }
+    }
+  }
+}
+
+.bloodReport-content {
+  background: var(--bg-block2);
+  border-radius: 30px;
+  border: 0.5px solid #e0e7fe;
+  &-item {
+    display: flex;
+    div {
+      &:first-child {
+        border-right: 1px solid #ebeef4;
+        flex: 1;
+        padding: 15px 30px;
+      }
+      &:last-child {
+        padding: 15px 30px 15px 20px;
+        width: 25%;
+      }
+    }
+    &:not(:last-child) {
+      div {
+        border-bottom: 1px solid #ebeef4;
+      }
+    }
+  }
+}
+
+.personalInfo-avatar-background {
+  .upload-btn {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover {
+      opacity: 0.9;
+    }
+    z-index: 100;
+  }
+  .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-size: cover;
+  }
+}
+
+.personalInfo-avatar {
+  input {
+    display: none;
+  }
+}

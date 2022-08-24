@@ -1,0 +1,430 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "componentStyle/authenPageStyles.scss";
+@import "componentStyle/base.scss";
+@import "componentStyle/blockArea.scss";
+@import "componentStyle/uploadFile.scss";
+@import "componentStyle/doctor.scss";
+@import "componentStyle/emergency.scss";
+
+:root {
+  --main-font: "Inter", sans-serif;
+  --text-main-color: #70708c;
+  --text-strong: #3d3d66;
+  --text-normal: #9898a3;
+  --text-weak: #c2c2dd;
+  --header-title: #292968;
+  --bg-block1: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.4) 100%
+  );
+  --bg-block2: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
+  --bg-input: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.6) 100%
+  );
+  --bg-input-focus: #e0e7fe;
+  --bg-red-btn: #ff8f6b;
+  --bg-blue-btn: #605bff;
+  --bg-main: linear-gradient(
+    180deg,
+    rgba(234, 239, 255, 1) 0%,
+    rgba(255, 255, 255, 0.6) 100%
+  );
+}
+
+@mixin btn-style-fw($color, $focus) {
+  border: none;
+  background-color: $color;
+  color: white !important;
+  padding: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.1s ease;
+  width: 100%;
+  text-align: center;
+  &:hover {
+    opacity: 0.9;
+  }
+  &:focus {
+    box-shadow: 0 0 0 3px $focus;
+  }
+}
+
+@mixin btn-style($color, $focus, $width) {
+  border: none;
+  background-color: $color;
+  color: white !important;
+  padding: 14px;
+  border-radius: 5px;
+  width: $width;
+  cursor: pointer;
+  transition: opacity 0.1s ease;
+  text-align: center;
+  &:hover {
+    opacity: 0.9;
+  }
+  &:focus {
+    box-shadow: 0 0 0 3px $focus;
+  }
+}
+
+@mixin text-style($font-size, $font-size-var) {
+  font-size: $font-size;
+  color: var($font-size-var);
+}
+
+@mixin text-strong-style($font-size, $font-size-var, $strong) {
+  font-size: $font-size;
+  color: var($font-size-var);
+  font-weight: $strong;
+}
+
+@mixin title-style($font-size, $mb) {
+  font-size: $font-size;
+  color: var(--header-title);
+  margin-bottom: $mb;
+}
+
+@mixin avatar($size) {
+  width: $size;
+  height: $size;
+  object-fit: cover;
+  border-radius: 50%;
+  object-position: top;
+}
+
+@mixin avatar-background($size) {
+  background-image: url(../../assets/imgs/imgframe.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: $size;
+  width: $size;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+@mixin block-scroll($height) {
+  height: $height;
+  padding-right: 20px;
+  overflow-y: scroll;
+  /* width */
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: rgb(233, 233, 233);
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgb(224, 211, 255);
+  }
+}
+
+@mixin cut-off($clamp) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $clamp;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+* {
+  font-family: var(--main-font);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-main);
+}
+
+.rotate {
+  &::after {
+    content: "\262A";
+    display: inline-block;
+    animation: rotate 2s linear infinite;
+    margin-left: 10px;
+  }
+}
+
+.title {
+  @include title-style(20px, 20px);
+  font-weight: 600;
+}
+
+.main-title {
+  @include title-style(22px, 20px);
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.text {
+  @include text-style(16px, --text-main-color);
+}
+
+.text-input {
+  @include text-style(15px, --text-strong);
+}
+
+.text-small {
+  @include text-style(15px, --text-normal);
+}
+
+.text-nav {
+  @include text-style(17px, --text-strong);
+  font-weight: 500;
+}
+
+.text-strong {
+  @include text-style(16px, --text-strong);
+  font-weight: 500;
+}
+
+.text-weak {
+  @include text-style(16px, --text-weak);
+}
+
+.btn-style1-fw {
+  @include btn-style-fw(var(--bg-blue-btn), #bbb9ff);
+}
+
+.btn-style2-fw {
+  @include btn-style-fw(var(--bg-red-btn), #ffbaba);
+}
+
+.btn-style1 {
+  @include btn-style(var(--bg-blue-btn), #bbb9ff, 255px);
+}
+
+.btn-style2 {
+  @include btn-style(var(--bg-red-btn), #ffbaba, 255px);
+}
+
+.btn-style3 {
+  @include btn-style(var(--bg-blue-btn), #ffbaba, unset);
+}
+
+.d-flex {
+  display: flex;
+}
+
+.pb-20 {
+  padding-bottom: 20px;
+}
+
+.pb-30 {
+  padding-bottom: 30px;
+}
+
+.pt-20 {
+  padding-top: 20px;
+}
+
+.pt-30 {
+  padding-top: 30px;
+}
+
+.pr-20 {
+  padding-right: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.mb-25 {
+  margin-bottom: 25px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.border-radius-10 {
+  border-radius: 10px !important;
+}
+
+a.tab-title,
+.tab-link a {
+  color: var(--text-strong);
+  text-decoration: none !important;
+  display: block;
+}
+
+label {
+  font-weight: 400;
+  display: inline-block;
+  margin-bottom: 8px;
+  width: 100%;
+  &[for="checkbox"] {
+    color: var(--text-main-color);
+  }
+}
+
+.input-style:not(.input-style[type="checkbox"]) {
+  border: none;
+  outline: none;
+  background: var(--bg-input);
+  border-radius: 5px;
+  padding: 10px 12px;
+  width: 100%;
+  &:focus-visible {
+    outline: none;
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px #ced1ff;
+  }
+  &::placeholder {
+    color: var(--text-weak);
+  }
+}
+.input-style[type="checkbox"] {
+  height: 12px;
+}
+
+.avatar-120 {
+  @include avatar(120px);
+}
+
+.avatar-200 {
+  @include avatar(200px);
+}
+
+.avatar-background-130 {
+  @include avatar-background(130px);
+}
+
+.availableTime {
+  display: flex;
+  align-items: center;
+  img {
+    margin-right: 5px;
+  }
+}
+
+.block-scroll-100 {
+  @include block-scroll(100%);
+}
+
+.block-scroll-258px {
+  @include block-scroll(258px);
+}
+
+.cut-off-3 {
+  @include cut-off(3);
+}
+
+.text-large-strong {
+  @include text-strong-style(18px, --text-strong, 600);
+}
+
+@media screen and (max-width: 992px) {
+  .title {
+    @include title-style(18px, 16px);
+  }
+  .main-title {
+    @include title-style(20px, 16px);
+  }
+  .text {
+    @include text-style(14px, --text-main-color);
+  }
+  .text-input {
+    @include text-style(13px, --text-strong);
+  }
+  .text-nav {
+    @include text-style(15px, --text-strong);
+  }
+  .text-strong {
+    @include text-style(14px, --text-strong);
+  }
+  .text-weak {
+    @include text-style(14px, --text-weak);
+  }
+  .text-small {
+    @include text-style(13px, --text-normal);
+  }
+  .text-large-strong {
+    @include text-strong-style(17px, --text-strong, 600);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .title {
+    @include title-style(16px, 12px);
+  }
+  .main-title {
+    @include title-style(18px, 26px);
+  }
+  .text {
+    @include text-style(13px, --text-main-color);
+  }
+  .text-input {
+    @include text-style(11px, --text-strong);
+  }
+  .text-small {
+    @include text-style(11px, --text-normal);
+  }
+  .text-nav {
+    @include text-style(13px, --text-strong);
+  }
+  .text-strong {
+    @include text-style(12px, --text-strong);
+  }
+  .text-weak {
+    @include text-style(12px, --text-weak);
+  }
+  .text-large-strong {
+    @include text-strong-style(16px, --text-strong, 600);
+  }
+  .form {
+    &#signup .form-wrapper {
+      width: 100% !important;
+      padding: 80px 13% !important;
+    }
+    &#login .form-wrapper {
+      width: 100% !important;
+      padding: 114px 13% !important;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
+}

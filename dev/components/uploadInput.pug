@@ -1,0 +1,12 @@
+.file-upload
+    button.file-upload-btn(type='button' onclick="$('.file-upload-input').trigger( 'click' )") Add Image
+    .image-upload-wrap
+        input.file-upload-input(type='file' onchange='readURL(this);' accept='image/*')
+        .drag-text
+            h3 Drag and drop a file or select add Image
+    .file-upload-content
+        img.file-upload-image(src='#' alt='your image')
+        .image-title-wrap
+            button.remove-image(type='button' onclick='removeUpload()')
+                | Remove 
+                span.image-title Uploaded Image

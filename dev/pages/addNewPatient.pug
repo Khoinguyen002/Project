@@ -1,0 +1,19 @@
+extends ../components/frames.pug
+include ../components/tabs.pug
+include ../components/form.pug
+block script
+    script(src="scripts/patient/addNewPatient.js" type="module") 
+block content 
+    .addNewPatient
+        .addNewPatient-title.main-title Add New Patient 
+        .addNewPatient-contents
+            +tabs(["Personal Infomation", "Guardian Infomation"], "addNewPatientTab", [1, 1], {padding: "5px 0 10px 0", mb: "40px"})
+            .personalInfo(ref="addNewPatientTab0")
+                .personalInfo-avatar
+                    .personalInfo-avatar-background.avatar-background-130
+                        div(class="avatar")
+                        img.upload-btn(src="assets/imgs/pencil.svg")
+                    input(type='file' accept="image/*")
+                +form("personalInfo", personalInfoForm)
+            .guardianInfo(ref="addNewPatientTab1")
+                +form("guardianInfo", guardianInfoForm)

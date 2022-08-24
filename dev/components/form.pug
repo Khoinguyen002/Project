@@ -1,0 +1,16 @@
+include ./input.pug
+include ./button.pug
+
+mixin form(formId, config) 
+    form.row(id=formId)
+        each value in config.input
+            div(class=`col-xl-${value.width}`)
+                if value.type == "text-area"
+                    .form-group.mb-20
+                        label.text-strong #{value.label}
+                        textarea.input-style(name=value.label rows="5" placeholder=value.placeholder id=formId)
+                else
+                    +input(value.label, value.type, value.placeholder, value.name, value.dataList)
+        if config.button 
+            .form-group
+                +button(config.button.type, config.button.style, config.button.subClass, config.button.text)

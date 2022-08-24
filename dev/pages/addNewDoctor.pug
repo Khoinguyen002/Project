@@ -1,0 +1,29 @@
+extends  ../components/frames.pug
+include ../components/form.pug
+include ../components/button.pug
+block script
+    script(src="scripts/doctor/addNewDoctor.js" type="module")
+block content 
+    .addNewDoctor 
+        .addNewDoctor-title.main-title Add New Doctor
+        .addNewDoctor-content
+            .row
+                .profilePicture.col-xl-5
+                    label.profilePicture-title.text-strong Profile Picture
+                    .file-upload.block
+                        .file-upload-img
+                            img.mb-20(src="assets/imgs/cloud.svg" alt="")
+                        button.file-upload-btn.text(type='button') drop your image here
+                        .image-upload-wrap
+                            input.file-upload-input(type='file' accept='image/*')
+                            .drag-text.text Maximum Image Size 2MB
+                .coverPicture.col-xl-7
+                    label.coverPicture-title.text-strong Cover Picture
+                    .file-upload.block
+                        .file-upload-img
+                            img.mb-20(src="assets/imgs/cloud.svg" alt="")
+                        button.file-upload-btn.text(type='button') drop your image here
+                        .image-upload-wrap
+                            input.file-upload-input(type='file' accept='image/*')
+                            .drag-text.text Maximum Image Size 2MB
+            +form("doctorInfo", doctorInfoForm)

@@ -1,0 +1,51 @@
+include ../components/button.pug
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="css/main.css")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css")
+        link(rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css")
+        block css
+        title Document
+    body 
+        .base.row.g-0
+            .base-sidebar.col-lg-2
+                .base-sidebar-logo
+                    img(src="assets/imgs/Group_643.svg" alt="")
+                .base-sidebar-linkList
+                    each item, i in menuList
+                        .tab(href=`${item.links.length == 0 ? item.link : ""}`)
+                            a.tab-title.text-nav.d-flex(href=`${item.links.length == 0 ? item.link : "javascript:void(0)"}`) 
+                                svg(width=18 height=18 viewBox="0 0 18 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg") #!{item.logo}
+                                    span #{item.name}
+                                    if item.links.length != 0
+                                        img(src="assets/imgs/arrowRight.svg")
+                            .tab-links
+                                each val, index in item.links 
+                                    .tab-link.text-nav(href=val.link)
+                                        a(href=val.link) #{val.name}
+            .col-lg-10.container-fluid
+                .base-navbar.mb-25
+                    .base-navbar-search 
+                        img(src="assets/imgs/searchLogo.svg")
+                        input(type="text" class="input-style text-input" placeholder="Search")
+                    div.d-flex
+                        .base-navbar-btn.mr-20
+                            +button("button", "btn-style3", "", "+ Add Patient")
+                        .base-navbar-ring.mr-20
+                            img(src="assets/imgs/notification.svg" alt="ring")
+                        .base-navbar-avatar
+                            img(src="assets/imgs/avatar.png" alt="avatar")
+                .block-area
+                    block content
+
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js") 
+        script(src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js")
+        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js") 
+        script(src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js") 
+        script(src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js") 
+        script(src="scripts/common/handleSideBar.js")
+        block script

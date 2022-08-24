@@ -1,0 +1,73 @@
+extends  ../components/frames.pug
+include  ../components/tabs.pug
+include  ../components/appointment.pug
+block css
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wrick17/calendar-plugin@master/style.css")
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wrick17/calendar-plugin@master/theme.css")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css")
+block script
+    script(src="https://cdn.jsdelivr.net/gh/wrick17/calendar-plugin@master/calendar.min.js") 
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js") 
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js") 
+    script(src="scripts/doctor/doctorProfile.js" type="module")
+block content
+    .doctorProfile
+        .doctorProfile-content
+            .row
+                .col-xl-8
+                    .doctorProfile-profile
+                        .doctorProfile-profile-title.main-title Doctor Profile
+                        .doctorProfile-profile-content.block 
+                            .background 
+                                img(src="https://i.ibb.co/xGYdSf1/Image.png" alt="" srcset="")
+                            .wrapper
+                                .avatar
+                                    img.avatar-200(src="https://i.ibb.co/r5N2P83/6-I0j-Xsl3-Xz-3.png" alt="" srcset="")
+                                .info.d-flex
+                                    div 
+                                        .info-name.text-large-strong Khoi Nguyen
+                                        .info-specialized.text 
+                                        +appointment("text info-availableTime", "4AM : 8PM")
+                                    .info-rate 
+                                        img(src="assets/imgs/star.svg" alt="")
+                                        img(src="assets/imgs/star.svg" alt="")
+                                        img(src="assets/imgs/star.svg" alt="")
+                                        img(src="assets/imgs/star.svg" alt="")
+                                        img(src="assets/imgs/star.svg" alt="")
+                            .doctorProfile-profile-tabs
+                                +tabs(["Biography", "Skills", "Contact Information"], "doctorProfile-profile-tab", [1, 1, 1,], {padding: "20px 0 10px 0", margin: "0 0 20px 0"})
+                            .biography.text
+                                | George A. Sample, MD, FCCP, is a graduate of George Washington University Medical School. He trained in internal medicine at the University of Oregon Health Sciences (UOHS) and pulmonary critical care medicine at UOHS and the University of Southern California.
+                                br
+                                br
+                                | Sample has been practicing since 1976, the last 12 years in Washington, D.C., at the Washington Hospital Center, selected as one of the top 100 hospitals in the United States. Sample's practice specializes in the care of critically.
+                                | George A. Sample, MD, FCCP, is a graduate of George Washington University Medical School. He trained in internal medicine at the University of Oregon Health Sciences (UOHS) and pulmonary critical care medicine at UOHS and the University of Southern California.
+                                br
+                                br
+                                | Sample has been practicing since 1976, the last 12 years in Washington, D.C., at the Washington Hospital Center, selected as one of the top 100 hospitals in the United States. Sample's practice specializes in the care of critically.
+                            .biography-fade.text-strong.d-flex Read More
+
+                .col-xl-4
+                    .doctorProfile-appointment
+                        .doctorProfile-appointment-title.main-title Appointment 
+                        .doctorProfile-appointment-content.block
+                            .calendar-container
+                            .appoitment.block-scroll-258px
+                                .wrapper
+                                    .appoitment-label.text-strong Friday, February 2
+                                    +appointment("text appoitment-availableTime", "4AM : 8PM")
+                                .wrapper
+                                    .appoitment-label.text-strong Friday, February 2
+                                    +appointment("text appoitment-availableTime", "4AM : 8PM")
+                                .wrapper
+                                    .appoitment-label.text-strong Friday, February 2
+                                    +appointment("text appoitment-availableTime", "4AM : 8PM")
+                                .wrapper
+                                    .appoitment-label.text-strong Friday, February 2
+                                    +appointment("text appoitment-availableTime", "4AM : 8PM")
+            .doctorProfile-slide 
+
+
+
+

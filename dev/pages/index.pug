@@ -1,0 +1,66 @@
+extends  ../components/frames.pug
+block script 
+    script(src="scripts/dashboard/handleDashboard.js")
+block content
+    .dashboard
+        .welcome
+            .welcome-title.main-title Welcome
+            .welcome-content.row.text
+                each item in welcomeData
+                    .col-xxl-3.col-xl-4.col-md-6
+                        .block.d-flex
+                            .welcome-content-logo.mr-20
+                                img(src=item.icon)
+                            .welcome-content-info
+                                span #{item.title}
+                                div #{item.number}
+        .row.g-0
+            .patientHis.col-xl-8
+                .patientHis-title.title Patient History
+                .patientHis-content.block.mr-xl-block.pt-0
+                    canvas(id="patientHisChart" width="480" height="280")
+            .topDiseases.col-xl-4 
+                .topDiseases-title.title Top Diseases
+                .topDiseases-content.block.d-flex
+                    canvas(id="topDiseasesChart" width="480" height="180")
+        .row.g-0
+            .totalPatient.col-xl-7
+                .totalPatient-title.title Total Patient Per Day
+                .totalPatient-content.block.mr-xl-block.pt-0
+                    canvas(id="totalPatientChart" width="480" height="180")
+            .topDoctor.col-xl-5     
+                .topDoctor-title.title Top Doctors
+                .topDoctor-content.block
+                    .topDoctor-content-wrapper.block-scroll-100
+                        each val in topDoctors 
+                            .topDoctor-content-item.d-flex.mpb-item-block1
+                                .topDoctor-content-item-avatar
+                                    .avatar 
+                                        img(src=val.avatar)
+                                .topDoctor-content-item-info 
+                                    .name.text-strong #{val.name}
+                                    .position.text #{val.position}
+                                .topDoctor-content-item-rate 
+                                    .star
+                                        - for (var i=1; i<=5; i++)
+                                            if i <= val.star
+                                                img(src="assets/imgs/starActive.svg")
+                                            else 
+                                                img(src="assets/imgs/star.svg")
+                                    .reviews.text-weak #{val.views} reviews
+        .row.g-0
+            .recentPatient.col-xl-6 
+                .recentPatient-title.title Recent Patient Activity
+                .recentPatient-content.block-end.mr-xl-block
+                    .recentPatient-content-wrapper.block-scroll-100
+                        each item in recentPatient
+                            .recentPatient-content-item.d-flex.mpb-item-block2
+                                .recentPatient-content-item-info
+                                    .name.text-strong #{item.name}
+                                    .location.text #{item.location}
+                                .recentPatient-content-item-category.text #{item.category}
+                                .recentPatient-content-item-status.text #{item.status}
+            .revenue.col-xl-6
+                .revenue-title.title Revenue
+                .revenue-content.block-end
+                    canvas(id="revenueChart" width="480" height="180")
