@@ -1,6 +1,6 @@
-import ajax from "/scripts/common/ajax.js";
-import handleTabs from "/scripts/common/handleClickTabs.js";
-import activeStar from "/scripts/common/activeStar.js";
+import ajax from "../common/ajax.js";
+import handleTabs from "../common/handleClickTabs.js";
+import activeStar from "../common/activeStar.js";
 
 function appendDoctorProfile() {
   const search = window.location.search;

@@ -1,5 +1,5 @@
-import ajax from "/scripts/common/ajax.js";
-import activeStar from "/scripts/common/activeStar.js";
+import ajax from "../common/ajax.js";
+import activeStar from "../common/activeStar.js";
 
 function appendDoctor() {
   ajax("https://62fdaba36e617f88deacf06e.mockapi.io/api/v1/doctor", "get").then(
