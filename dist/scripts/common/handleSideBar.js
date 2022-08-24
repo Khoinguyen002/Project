@@ -32,6 +32,7 @@ function activeTab() {
     let path = window.location.pathname;
     const tabToActive = $(`div[href=".${path}"]`);
 
+    console.log(tabToActive);
     if (tabToActive.parent().attr("class") == "base-sidebar-linkList") {
       tabToActive.addClass("active");
     } else {

@@ -1,5 +1,6 @@
 extends  ../components/frames.pug
 include  ../components/tabs.pug
+include  ../components/button.pug
 include  ../components/form.pug
 block script
     script(src="scripts/emergency/emergencyForm.js" type="module") 
@@ -23,6 +24,7 @@ block content
                                     .serviceList-item.d-flex(data-id=index)
                                         .text #{val.name}
                                         .text #{val.price}
+                            +button("button", "btn-style2", "border-radius-10 mt-20", "Next")
                     .serviceTotal.col-xl-5
                         .serviceTotal-title.text-strong Given Services List
                         .serviceTotal-content 
@@ -35,3 +37,9 @@ block content
                                     .text 
                                     .text Total
                                     .text $0
+
+                .emergencyForm-payment.row(data-id="emergencyForm-tab2")
+                    .col-xl-6
+                        +form("paymentForm", paymentForm)
+                    .col-xl-6.d-flex
+                        img(src="assets/imgs/paymentBg.png" alt="")

@@ -56,7 +56,7 @@
                 },
                 {
                     "name": "mergency List",
-                    "link": "#"
+                    "link": "./emergencyList.html"
                 }
             ]
         },
@@ -409,7 +409,6 @@
                 "placeholder": "Write a short description",
                 "width": 12,
                 "name": "description"
-                
             }
         ],
         "button": {
@@ -801,5 +800,57 @@
             "name": "Social work or case management services",
             "price": "$1400"
         }
-    ]
+    ],
+    "paymentForm": {
+        "input": [
+            {
+                "label": "Sub Total",
+                "type": "text",
+                "placeholder": "$3400",
+                "width": 12,
+                "name": "sub_total"
+            },
+            {
+                "label": "Discount",
+                "type": "text",
+                "placeholder": "10%",
+                "width": 6,
+                "name": "discount"
+            },
+            {
+                "label": "Less",
+                "type": "text",
+                "placeholder": "$340",
+                "width": 6,
+                "name": "less"
+            },
+            {
+                "label": "Grand Total",
+                "type": "text",
+                "placeholder": "$3060",
+                "width": 12,
+                "name": "grand_total"
+            },
+            {
+                "label": "Paid Amount",
+                "type": "text",
+                "placeholder": "$3060",
+                "width": 12,
+                "name": "paid-amount"
+            },
+            {
+                "label": "Due",
+                "type": "text",
+                "placeholder": "0",
+                "width": 12,
+                "name": "due"
+            }
+        ],
+        "button": {
+            "type": "button",
+            "style": "btn-style2",
+            "subClass": "border-radius-10",
+            "text": "Submit"
+        }
+    }
 }

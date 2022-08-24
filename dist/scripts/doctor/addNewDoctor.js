@@ -1,3 +1,5 @@
+import ajax from "../common/ajax.js";
+
 function handlePictureUpload(className) {
   function modifyUpload(e, input) {
     $(`.${className} .file-upload-img img`).attr("src", e.target.result);

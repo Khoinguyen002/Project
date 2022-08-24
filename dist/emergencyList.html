@@ -7,10 +7,6 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wrick17/calendar-plugin@master/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wrick17/calendar-plugin@master/theme.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
     <title>Document</title>
   </head>
   <body> 
@@ -93,67 +89,10 @@
           </div>
         </div>
         <div class="block-area">
-          <div class="doctorProfile">
-            <div class="doctorProfile-content">
-              <div class="row">
-                <div class="col-xl-8">
-                  <div class="doctorProfile-profile">
-                    <div class="doctorProfile-profile-title main-title">Doctor Profile</div>
-                    <div class="doctorProfile-profile-content block"> 
-                      <div class="background"> <img src="https://i.ibb.co/xGYdSf1/Image.png" alt="" srcset=""></div>
-                      <div class="wrapper">
-                        <div class="avatar"><img class="avatar-200" src="https://i.ibb.co/r5N2P83/6-I0j-Xsl3-Xz-3.png" alt="" srcset=""></div>
-                        <div class="info d-flex">
-                          <div> 
-                            <div class="info-name text-large-strong">Khoi Nguyen</div>
-                            <div class="info-specialized text"> </div>
-                            <div class="availableTime text info-availableTime"><img src="assets/imgs/clock.svg" alt=""/>4AM : 8PM</div>
-                          </div>
-                          <div class="info-rate"> <img src="assets/imgs/star.svg" alt=""><img src="assets/imgs/star.svg" alt=""><img src="assets/imgs/star.svg" alt=""><img src="assets/imgs/star.svg" alt=""><img src="assets/imgs/star.svg" alt=""></div>
-                        </div>
-                      </div>
-                      <div class="doctorProfile-profile-tabs">
-                        <div class="doctorProfile-profile-tabs d-flex">
-                          <div class="doctorProfile-profile-tab text-strong active tab-styled" style="flex:1;padding:20px 0 10px 0;margin:0 0 20px 0;" data-id="doctorProfile-profile-tab0">Biography</div>
-                          <div class="doctorProfile-profile-tab text-strong  tab-styled" style="flex:1;padding:20px 0 10px 0;margin:0 0 20px 0;" data-id="doctorProfile-profile-tab1">Skills</div>
-                          <div class="doctorProfile-profile-tab text-strong  tab-styled" style="flex:1;padding:20px 0 10px 0;margin:0 0 20px 0;" data-id="doctorProfile-profile-tab2">Contact Information</div>
-                        </div>
-                      </div>
-                      <div class="biography text">George A. Sample, MD, FCCP, is a graduate of George Washington University Medical School. He trained in internal medicine at the University of Oregon Health Sciences (UOHS) and pulmonary critical care medicine at UOHS and the University of Southern California.<br><br>Sample has been practicing since 1976, the last 12 years in Washington, D.C., at the Washington Hospital Center, selected as one of the top 100 hospitals in the United States. Sample's practice specializes in the care of critically.
-                        George A. Sample, MD, FCCP, is a graduate of George Washington University Medical School. He trained in internal medicine at the University of Oregon Health Sciences (UOHS) and pulmonary critical care medicine at UOHS and the University of Southern California.<br><br>Sample has been practicing since 1976, the last 12 years in Washington, D.C., at the Washington Hospital Center, selected as one of the top 100 hospitals in the United States. Sample's practice specializes in the care of critically.
-                      </div>
-                      <div class="biography-fade text-strong d-flex">Read More</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-4">
-                  <div class="doctorProfile-appointment">
-                    <div class="doctorProfile-appointment-title main-title">Appointment </div>
-                    <div class="doctorProfile-appointment-content block">
-                      <div class="calendar-container"></div>
-                      <div class="appoitment block-scroll-258px">
-                        <div class="wrapper">
-                          <div class="appoitment-label text-strong">Friday, February 2</div>
-                          <div class="availableTime text appoitment-availableTime"><img src="assets/imgs/clock.svg" alt=""/>4AM : 8PM</div>
-                        </div>
-                        <div class="wrapper">
-                          <div class="appoitment-label text-strong">Friday, February 2</div>
-                          <div class="availableTime text appoitment-availableTime"><img src="assets/imgs/clock.svg" alt=""/>4AM : 8PM</div>
-                        </div>
-                        <div class="wrapper">
-                          <div class="appoitment-label text-strong">Friday, February 2</div>
-                          <div class="availableTime text appoitment-availableTime"><img src="assets/imgs/clock.svg" alt=""/>4AM : 8PM</div>
-                        </div>
-                        <div class="wrapper">
-                          <div class="appoitment-label text-strong">Friday, February 2</div>
-                          <div class="availableTime text appoitment-availableTime"><img src="assets/imgs/clock.svg" alt=""/>4AM : 8PM</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="doctorProfile-slide"> </div>
+          <div class="emergencyList">
+            <div class="emergencyList-title main-title">Patient List</div>
+            <div class="emergencyList-content">
+              <table id="emergencyTable" style="width:100%"></table>
             </div>
           </div>
         </div>
@@ -165,9 +104,6 @@
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"> </script>
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"> </script>
     <script src="scripts/common/handleSideBar.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/wrick17/calendar-plugin@master/calendar.min.js"> </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"> </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"> </script>
-    <script src="scripts/doctor/doctorProfile.js" type="module"></script>
+    <script src="scripts/emergency/emergencyList.js" type="module"> </script>
   </body>
 </html>

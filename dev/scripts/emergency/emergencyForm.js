@@ -8,6 +8,14 @@ function handleActiveTab() {
   $(".emergencyForm-tab").click(function () {
     activeTabContent(this);
   });
+  $(".emergencyForm button").click(function () {
+    const parentElement = $(this).closest("[data-id]");
+    const nextElement = $(
+      `.tab-styled[data-id=${parentElement.attr("data-id")}]`
+    ).next();
+    parentElement.next()[0] ? nextElement.trigger("click") : "";
+  });
+
   activeTabContent($(".tab-content").children()[0]);
   activeTab("emergencyForm-tab");
 }
@@ -74,6 +82,11 @@ function clickService() {
     );
     setPrice();
   });
+}
+
+function handleSubmit() {
+  $(".emergencyForm button").click();
+  $(".serviceList-content button");
 }
 
 handleActiveTab();

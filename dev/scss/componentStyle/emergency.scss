@@ -99,3 +99,11 @@
     }
   }
 }
+.emergencyForm-payment {
+  & > div {
+    align-items: center;
+    img {
+      width: 100%;
+    }
+  }
+}

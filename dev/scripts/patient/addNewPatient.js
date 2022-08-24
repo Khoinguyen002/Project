@@ -58,6 +58,7 @@ function collectInfo() {
     data["status"] = status();
     data["roomNo"] = "D-106";
     data["doctorAssigned"] = "Charlotte";
+    data["is_emergency"] = Math.random() >= 0.5;
 
     ajax(
       "https://api.imgbb.com/1/upload?key=809acb063cda3c3dab5d39decec18813",

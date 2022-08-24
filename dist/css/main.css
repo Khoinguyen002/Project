@@ -377,22 +377,28 @@
   border-bottom: 1px #f3f3f8 solid;
 }
 
+#emergencyTable_filter label,
 #patientTable_filter label {
   text-align: end !important;
 }
 
+#emergencyTable,
 #patientTable {
   border-spacing: 0 7px;
 }
-#patientTable thead th:first-child::after, #patientTable thead th:first-child::before {
+#emergencyTable thead th:first-child::after, #emergencyTable thead th:first-child::before,
+#patientTable thead th:first-child::after,
+#patientTable thead th:first-child::before {
   display: none;
 }
+#emergencyTable td img,
 #patientTable td img {
   margin-right: 10px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: top;
 }
 
 table tr {
@@ -484,7 +490,8 @@ table tr {
   .block-td:first-child {
     padding-left: 18px;
   }
-  #patientTable {
+  #emergencyTable,
+#patientTable {
     border-spacing: 0 5px;
   }
   .block-td-head:first-child {
@@ -832,6 +839,13 @@ table tr {
   border-right: 0.5px #dfe4ee solid;
 }
 
+.emergencyForm-payment > div {
+  align-items: center;
+}
+.emergencyForm-payment > div img {
+  width: 100%;
+}
+
 :root {
   --main-font: "Inter", sans-serif;
   --text-main-color: #70708c;
@@ -1069,6 +1083,10 @@ body {
 
 .mt-10 {
   margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
 }
 
 .border-radius-10 {

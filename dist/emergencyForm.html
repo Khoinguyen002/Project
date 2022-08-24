@@ -44,7 +44,7 @@
               </svg></a>
             <div class="tab-links">
               <div class="tab-link text-nav" href="./emergencyForm.html"><a href="./emergencyForm.html">Emergency Form</a></div>
-              <div class="tab-link text-nav" href="#"><a href="#">mergency List</a></div>
+              <div class="tab-link text-nav" href="./emergencyList.html"><a href="./emergencyList.html">mergency List</a></div>
             </div>
           </div>
           <div class="tab" href="undefined"><a class="tab-title text-nav d-flex" href="undefined"> 
@@ -297,6 +297,7 @@
                           <div class="text">$1400</div>
                         </div>
                       </div>
+                      <button class="btn-style2 text border-radius-10 mt-20" type="button">Next</button>
                     </div>
                   </div>
                   <div class="serviceTotal col-xl-5">
@@ -316,6 +317,52 @@
                       </div>
                     </div>
                   </div>
+                </div>
+                <div class="emergencyForm-payment row" data-id="emergencyForm-tab2">
+                  <div class="col-xl-6">
+                    <form class="row" id="paymentForm">
+                      <div class="col-xl-12">
+                        <div class="form-group"> 
+                          <label class="text-strong">Sub Total</label>
+                          <input class="input-style text-input mb-20" type="text" placeholder="$3400" name="sub_total" list="sub_total"/>
+                        </div>
+                      </div>
+                      <div class="col-xl-6">
+                        <div class="form-group"> 
+                          <label class="text-strong">Discount</label>
+                          <input class="input-style text-input mb-20" type="text" placeholder="10%" name="discount" list="discount"/>
+                        </div>
+                      </div>
+                      <div class="col-xl-6">
+                        <div class="form-group"> 
+                          <label class="text-strong">Less</label>
+                          <input class="input-style text-input mb-20" type="text" placeholder="$340" name="less" list="less"/>
+                        </div>
+                      </div>
+                      <div class="col-xl-12">
+                        <div class="form-group"> 
+                          <label class="text-strong">Grand Total</label>
+                          <input class="input-style text-input mb-20" type="text" placeholder="$3060" name="grand_total" list="grand_total"/>
+                        </div>
+                      </div>
+                      <div class="col-xl-12">
+                        <div class="form-group"> 
+                          <label class="text-strong">Paid Amount</label>
+                          <input class="input-style text-input mb-20" type="text" placeholder="$3060" name="paid-amount" list="paid-amount"/>
+                        </div>
+                      </div>
+                      <div class="col-xl-12">
+                        <div class="form-group"> 
+                          <label class="text-strong">Due</label>
+                          <input class="input-style text-input mb-20" type="text" placeholder="0" name="due" list="due"/>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <button class="btn-style2 text border-radius-10" type="button">Submit</button>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-xl-6 d-flex"><img src="assets/imgs/paymentBg.png" alt=""></div>
                 </div>
               </div>
             </div>

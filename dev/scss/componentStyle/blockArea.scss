@@ -67,12 +67,14 @@
   @include mpb-item-block(20px);
 }
 
+#emergencyTable_filter,
 #patientTable_filter {
   label {
     text-align: end !important;
   }
 }
 
+#emergencyTable,
 #patientTable {
   border-spacing: 0 7px;
   thead th:first-child {
@@ -87,6 +89,7 @@
     height: 30px;
     border-radius: 50%;
     object-fit: cover;
+    object-position: top;
   }
 }
 
@@ -187,6 +190,7 @@ table tr {
       padding-left: 18px;
     }
   }
+  #emergencyTable,
   #patientTable {
     border-spacing: 0 5px;
   }
