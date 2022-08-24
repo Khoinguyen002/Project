@@ -71,22 +71,19 @@ function clickService() {
       function () {
         let dataSelector =
           data[$(this).closest($(".serviceTotal-item")).attr("data-id")];
-        dataSelector.amount = Number($(this).val());
-        if (dataSelector.amount == 0) {
-          data[$(this).closest($(".serviceTotal-item")).attr("data-id")] = null;
-          $(this).closest($(".serviceTotal-item")).remove();
+        if (dataSelector) {
+          dataSelector.amount = Number($(this).val());
+          if (dataSelector.amount == 0) {
+            data[$(this).closest($(".serviceTotal-item")).attr("data-id")] =
+              null;
+            $(this).closest($(".serviceTotal-item")).remove();
+          }
+          setPrice();
         }
-        setPrice();
-        console.log(data);
       }
     );
     setPrice();
   });
-}
-
-function handleSubmit() {
-  $(".emergencyForm button").click();
-  $(".serviceList-content button");
 }
 
 handleActiveTab();
